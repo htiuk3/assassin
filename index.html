@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Assassin Homepage</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="w3.css">
+	</head>
+	<body>
+		
+		<!--Phần header-->
+		<div class="w3-container w3-teal">
+			
+		</div>
+		<!-- Phần nội dung -->
+		<div class="w3-container">
+			<form>
+				<div>
+					<label>Số tiền :</label>
+					<input class="w3-input" type="number" id="SoTien" autofocus value="500">
+				</div>
+				<div>
+					<label>Lãi:</label>
+					<input class="w3-input" type="number" id="Lai" value="20">
+				</div>
+				<div>
+					<label>Số ngày góp:</label>
+					<input class="w3-input" type="number" id="SoNgayGop" value="30">
+				</div>
+				<button class="w3-button w3-border w3-border-orange w3-input" onclick="TinhKetQua()">Tính</button>
+				<h2 class="w3-input" id="KetQua"></h2>
+				<label></label>
+			</form>
+		</div>
+		<!-- Phần footer -->
+		<div>	
+		</div>
+		<script>
+			function TinhKetQua() {
+				var SoTien, Lai, SoNgayGop, KQ;
+				SoTien = document.getElementById("SoTien").value;
+				Lai = document.getElementById("Lai").value;
+				SoNgayGop = document.getElementById("SoNgayGop").value;
+				Lai/=100;
+				KQ=Lai*SoTien;
+				KQ+=Number(SoTien);
+				KQ=KQ/Number(SoNgayGop);
+				document.getElementById("KetQua").innerHTML = KQ;
+			}
+		</script>
+	</body>
+</html>
