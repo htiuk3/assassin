@@ -28,7 +28,7 @@
 				</div>
 				<div>
 					<label>Số tiền góp mỗi ngày:</label>
-					<input class="w3-input" type="number" id="SoTienGopMoiNgay" value="30">
+					<input class="w3-input" type="number" id="SoTienGopMoiNgay" value="">
 				</div>
 				<button class="w3-button w3-border w3-border-orange w3-input" onclick="TinhKetQua()">Tính</button>
 		</div>
@@ -37,7 +37,6 @@
 		</div>
 		<script>
 			function TinhKetQua() {
-			
 				var SoTien = document.getElementById("SoTien").value;
 				var Lai = document.getElementById("Lai").value;
 				var SoNgayGop = document.getElementById("SoNgayGop").value;
@@ -46,7 +45,7 @@
 				KQ=Lai*SoTien;
 				KQ+=Number(SoTien);
 				KQ=KQ/Number(SoNgayGop);
-				document.getElementById("SoTienGopMoiNgay").innerHTML = KQ;
+				document.getElementById("SoTienGopMoiNgay").value = KQ;
 			}
 		</script>
 	</body>
