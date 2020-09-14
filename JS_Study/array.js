@@ -10,17 +10,17 @@ Mảng trong JS
 - Lấy phần tử theo index
  */
 
- var languages = [
-     'Javascript',
-     'PHP',
-     'HTML'
- ] //Kiểu dữ liễu của Array là Object, muốn kiểm tra kiểu dữ liệu có phải mảng hay không dùng Array.isArray(<tên biến>)
-//  console.log(Array.isArray(languages));
-//  console.log(typeof languages);
+//  var languages = [
+//      'Javascript',
+//      'PHP',
+//      'HTML'
+//  ] //Kiểu dữ liễu của Array là Object, muốn kiểm tra kiểu dữ liệu có phải mảng hay không dùng Array.isArray(<tên biến>)
+// //  console.log(Array.isArray(languages));
+// //  console.log(typeof languages);
 
- var arrLanguages = new Array(1,2,3); //Không nên dùng
+//  var arrLanguages = new Array(1,2,3); //Không nên dùng
 
- console.log(languages[1]);
+//  console.log(languages[1]);
  
  /**
   * 1. To String -> dược ngăn cách bởi dấy phẩy
@@ -39,5 +39,42 @@ Mảng trong JS
   // splice(<vị trí đặt con trỏ>, <số phần tử xóa>, từng phần tử chèn)
   //languages.splice(1, 1, 'Java');
 
-  
-  console.log(languages.slice(-2));
+  // HIỂU THÊM VỀ ARRAY
+
+  var courses = [
+    {
+          id: 1,
+          name: 'Javascript',
+          coin: 250
+    },
+    {
+        id: 2,
+        name: 'HTML, CSS',
+        coin: 0
+    },
+    {
+        id: 3,
+        name: 'Ruby',
+        coin: 0
+    },
+    {
+        id: 4,
+        name: 'PHP',
+        coin: 400
+    },
+    {
+        id: 5,
+        name: 'ReactJS',
+        coin: 500
+    }, 
+  ]
+courses.forEach(function(course, index) {
+    console.log(course, index);
+});
+
+var isFree = courses.every(function(course, index){
+    console.log(index);
+    return course.coin === 0;
+})
+
+console.log(isFree);
