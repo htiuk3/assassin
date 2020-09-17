@@ -4,49 +4,56 @@
 		<title>Assassin Homepage</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="w3.css">
+		<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+		<link rel="stylesheet" href="dm.css">
+		
 	</head>
 	<body>
 		
-		<!--Phần header-->
-		<div class="w3-container w3-teal">
-			
-		</div>
-		<!-- Phần nội dung -->
-		<div class="w3-container">
-				<div>
-					<label>Số tiền :</label>
-					<input class="w3-input" type="number" id="SoTien" autofocus value="500">
-				</div>
-				<div>
-					<label>Lãi:</label>
-					<input class="w3-input" type="number" id="Lai" value="20">
-				</div>
-				<div>
-					<label>Số ngày góp:</label>
-					<input class="w3-input" type="number" id="SoNgayGop" value="30">
-				</div>
-				<div>
-					<label>Số tiền góp mỗi ngày:</label>
-					<input class="w3-input" type="number" id="SoTienGopMoiNgay" value="">
-				</div>
-				<button class="w3-button w3-border w3-border-orange w3-input" onclick="TinhKetQua()">Tính</button>
-		</div>
-		<!-- Phần footer -->
-		<div>	
-		</div>
+		<label>Số tiền ban đầu:</label>
+		<input class="w3-input" type="number" id="coins" autofocus value="500" oninput="ChangeDailyPay()">
+	
+		<label>Lãi (% / tháng):</label>
+		<input class="w3-input" type="number" id="interest" value="" oninput="ChangeDailyPay()">
+	
+		<label>Số ngày góp:</label>
+		<input class="w3-input" type="number" id="numberOfPaymentDays" value="" oninput="ChangeDailyPay()">
+	
+		<label>Số tiền góp mỗi ngày:</label>
+		<input class="w3-input" type="number" id="dailyPay" value="" oninput="ChangeNumberOfPaymentDays()">
+		
+		<button class="w3-button w3-border w3-border-orange w3-input" onclick="Handling()">Tính</button>
+		
 		<script>
-			function TinhKetQua() {
-				var SoTien = document.getElementById("SoTien").value;
-				var Lai = document.getElementById("Lai").value;
-				var SoNgayGop = document.getElementById("SoNgayGop").value;
-				var SoTienGopMoiNgay = document.getElementById("SoTienGopMoiNgay").value;
-				
-				Lai/=100;
-				KQ=Lai*SoTien;
-				KQ+=Number(SoTien);
-				KQ=KQ/Number(SoNgayGop);
-				document.getElementById("SoTienGopMoiNgay").value = KQ;
+			function w(value, text) {
+				console.log(text + ": " + value);
+			}
+			function ChangeDailyPay() {
+				const coins = document.getElementById('coins').value;
+				const interest = document.getElementById('interest').value;
+				const numberOfPaymentDays = document.getElementById('numberOfPaymentDays').value;
+				console.log(`${coins} ; ${interest} ; ${numberOfPaymentDays}`);
+				if (coins != 0 && interest != 0 && numberOfPaymentDays != 0) {
+					var result = 1; 
+					result = ((numberOfPaymentDays * interest / 30) / 100 + 1) * coins / numberOfPaymentDays;
+					document.getElementById('dailyPay').value = result;
+				}
+			}
+			function ChangeNumberOfPaymentDays() {
+				const coins = document.getElementById('coins').value;
+				const interest = document.getElementById('interest').value;
+				const dailyPay = document.getElementById('dailyPay').value;
+				if (coins != 0 && interest != 0 && dailyPay != 0) {
+					var result = 1;
+
+				}
+			}
+			function Handling() {
+				const coins = document.getElementById('coins').value;
+				const interest = document.getElementById('interest').value;
+				const numberOfPaymentDays = document.getElementById('numberOfPaymentDays').value;
+				const dailyPay = document.getElementById('dailyPay').value;
+				console.log(`${coins} ; ${interest} ; ${numberOfPaymentDays} ; ${dailyPay}`);
 			}
 		</script>
 	</body>
