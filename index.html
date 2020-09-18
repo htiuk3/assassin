@@ -4,26 +4,25 @@
 		<title>Assassin Homepage</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+		
 		<link rel="stylesheet" href="dm.css">
 		
 	</head>
 	<body>
+		<div class="container">
+			<label>Số tiền ban đầu:</label>
+			<input type="number" id="coins" autofocus value="500" oninput="ChangeDailyPay()">
 		
-		<label>Số tiền ban đầu:</label>
-		<input class="w3-input" type="number" id="coins" autofocus value="500" oninput="ChangeDailyPay()">
-	
-		<label>Lãi (% / tháng):</label>
-		<input class="w3-input" type="number" id="interest" value="" oninput="ChangeDailyPay()">
-	
-		<label>Số ngày góp:</label>
-		<input class="w3-input" type="number" id="numberOfPaymentDays" value="" oninput="ChangeDailyPay()">
-	
-		<label>Số tiền góp mỗi ngày:</label>
-		<input class="w3-input" type="number" id="dailyPay" value="" oninput="ChangeNumberOfPaymentDays()">
+			<label>Lãi (% / tháng):</label>
+			<input type="number" id="interest" value="" oninput="ChangeDailyPay()">
 		
-		<button class="w3-button w3-border w3-border-orange w3-input" onclick="Handling()">Tính</button>
+			<label>Số ngày góp:</label>
+			<input type="number" id="numberOfPaymentDays" value="" oninput="ChangeDailyPay()">
 		
+			<label>Số tiền góp mỗi ngày:</label>
+			<input type="number" id="dailyPay" value="" oninput="ChangeNumberOfPaymentDays()">
+		</div>
+	
 		<script>
 			function w(value, text) {
 				console.log(text + ": " + value);
