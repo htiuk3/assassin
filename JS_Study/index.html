@@ -18,19 +18,19 @@
       
           <div class="form-group">
             <label for="fullname" class="form-label">Tên đầy đủ</label>
-            <input id="fullname" name="fullname" type="text" placeholder="VD: Sơn Đặng" class="form-control">
+            <input id="fullname" name="fullname" type="text" rules="required" placeholder="VD: Sơn Đặng" class="form-control">
             <span class="form-message"></span>
           </div>
       
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
-            <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+            <input id="email" name="email" type="text" rules="required|email" placeholder="VD: email@domain.com" class="form-control">
             <span class="form-message"></span>
           </div>
       
           <div class="form-group">
             <label for="password" class="form-label">Mật khẩu</label>
-            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+            <input id="password" name="password" type="password" rules="required|min:6" placeholder="Nhập mật khẩu" class="form-control">
             <span class="form-message"></span>
           </div>
       
@@ -45,13 +45,7 @@
       
       </div>
       <script>
-          Validator({
-              form: '#form-1',
-              rules: [
-                  Validator.isRequired('#fullname'),
-                  Validator.isEmail('#email')
-              ]
-          })
+          var form = new Validator("#form-1");
       </script>
 
 </body>
